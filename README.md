@@ -7,3 +7,4 @@
 
 ## Todo:
 - Add config file for api endpoint and other variables
+- Add investing rate of return percentage to dashboard

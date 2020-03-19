@@ -9,7 +9,7 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			accountData: {}
+			accountData: null
 		};
 	}
 
@@ -21,7 +21,7 @@ class App extends React.Component {
 	}
 	
 	async getAccountData() {
-		let res = await fetch("//localhost:8081/getAllAssets");
+		let res = await fetch("//localhost:8081/getAccountData");
 		res = await res.json();
 		return res;
 	}
@@ -29,7 +29,7 @@ class App extends React.Component {
 	render() {
 		return (
             <div id="dashboard-container">
-				<AccountOverview accountData={this.state.accountData}/>
+				{this.state.accountData && <AccountOverview accountData={this.state.accountData}/>}
 			</div>
 		);
 	}
