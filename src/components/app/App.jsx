@@ -21,7 +21,7 @@ class App extends React.Component {
 	}
 	
 	async getAccountData() {
-		let res = await fetch("//localhost:8081/getAccountData");
+		let res = await fetch(process.env.REACT_APP_API_ENDPOINT + "/getAccountData");
 		res = await res.json();
 		return res;
 	}

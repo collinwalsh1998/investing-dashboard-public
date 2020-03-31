@@ -22,7 +22,9 @@ class AccountOverview extends React.Component {
 	generateAccountBalancesData() {
 		const balances = this.props.accountData.accountData;
 		const balancesObject = [];
-		const allyAccountLabels = { 12345: "Roth IRA", 12345: "Individual Investment Account" };
+		const allyAccountLabels = {};
+		allyAccountLabels[process.env.REACT_APP_ALLY_ROTH_ACCOUNT] = "Roth IRA";
+		allyAccountLabels[process.env.REACT_APP_ALLY_INVEST_ACCOUNT] = "Individual Investment Account";
 
 		balances.coinbaseData.forEach((coinbaseAccount) => {
 			balancesObject.push({ name: coinbaseAccount.name, value: coinbaseAccount.native_balance.amount });
