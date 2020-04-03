@@ -1,6 +1,9 @@
 //import react framework
 import React from "react";
 
+//import styles
+import "./AccountOverview.scss";
+
 //import components
 import AccountInfo from "../account-info/AccountInfo";
 import AccountSummary from "../account-summary/AccountSummary";
@@ -41,11 +44,24 @@ class AccountOverview extends React.Component {
 	}
 
 	render() {
+		const colorScheme = [
+			"#3f51b5",
+			"#c91111",
+			"#009688",
+			"#df874d",
+			"#c9d45c",
+			"#af658f",
+			"#51cda0",
+			"#0088cc",
+			"#f99301",
+			"#9bbb57"
+		];
+
 		return (
-			<article id="account-overview">
+			<article className="account-overview-component">
 				<AccountInfo/>
-				<AccountSummary/>
-				{this.state.accountBalancesData && <AccountBalances balances={this.state.accountBalancesData}/>}
+				{this.state.accountBalancesData && <AccountSummary balances={this.state.accountBalancesData} colorScheme={colorScheme}/>}
+				{this.state.accountBalancesData && <AccountBalances balances={this.state.accountBalancesData} colorScheme={colorScheme}/>}
 			</article>
 		);
 	}

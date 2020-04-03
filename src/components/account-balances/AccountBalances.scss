@@ -1,3 +1,36 @@
 .account-balances-component {
-        
+    
+}
+
+.account-balances-list-block {
+
+}
+
+.account-balances-list-header {
+    font-weight: 500;
+}
+
+.account-balances-list {
+    display: block;
+    margin-top: 16px;
+}
+
+.account-balances-list li {
+    border-left-style: solid;
+    border-left-width: 4px;
+    padding-left: 10px;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+}
+
+.account-balances-name {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+}
+
+.account-balances-value {
+    float: right;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.5px;
 }

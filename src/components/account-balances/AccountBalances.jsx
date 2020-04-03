@@ -16,13 +16,16 @@ class AccountBalances extends React.Component {
 
 	render() {
 		const balances = this.props.balances;
+		balances.sort((a, b) => (parseFloat(a.value) < parseFloat(b.value)) ? 1 : -1);
 
 		return (
-			<div id="account-balances-section" className="account-balances-component">
-				<div id="account-balances-block">
-					<ul id="account-balances-list">
-						{balances.map((account) => 
-							<li key={account.name}>
+			<div className="account-balances-component">
+				<div className="account-balances-list-block">
+					<h3 className="account-balances-list-header">Accounts ({balances.length} Total):</h3>
+
+					<ul className="account-balances-list">
+						{balances.map((account, index) =>
+							<li key={account.name} className={"border-" + this.props.colorScheme[index].substr(1)}>
 								<span className="account-balances-name">{account.name}</span>
 								<span className="account-balances-value">{this.dataParser.parseSingleCurrency(account.value)}</span>
 							</li>

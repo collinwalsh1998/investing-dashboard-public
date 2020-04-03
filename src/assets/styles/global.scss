@@ -6,3 +6,68 @@
     margin: 0;
     padding: 0;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", Arial, sans-serif;
+    /*font-family: "Poppins", Arial, sans-serif;*/
+    font-size: 22px;
+    line-height: normal;
+    font-weight: 600;
+    margin: 0;
+}
+
+p, span, a, li {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    font-weight: 500;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.border-3f51b5 {
+    border-color: #3f51b5;
+}
+
+.border-c91111 {
+    border-color: #c91111;
+}
+
+.border-009688 {
+    border-color: #009688;
+}
+
+.border-df874d {
+    border-color: #df874d;
+}
+
+.border-c9d45c {
+    border-color: #c9d45c;
+}
+
+.border-af658f {
+    border-color: #af658f;
+}
+
+.border-51cda0 {
+    border-color: #51cda0;
+}
+
+.border-0088cc {
+    border-color: #0088cc;
+}
+
+.border-f99301 {
+    border-color: #f99301;
+}
+
+.border-9bbb57 {
+    border-color: #9bbb57;
+}
+
+.canvasjs-chart-credit {
+    display: none;
+}
