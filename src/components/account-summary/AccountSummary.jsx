@@ -7,6 +7,9 @@ import DataParser from "../../utils/data-parser";
 //import styles
 import "./AccountSummary.scss";
 
+//import components
+import AccountBreakdown from "../account-breakdown/AccountBreakdown";
+
 //import libs
 import CanvasJSReact from "../../assets/lib/canvasjs.react";
 const CanvasJS = CanvasJSReact.CanvasJS;
@@ -29,8 +32,6 @@ class AccountSummary extends React.Component {
 			}
 		});
 
-		chartData.sort((a, b) => (parseFloat(a.y) < parseFloat(b.y)) ? 1 : -1);
-
 		CanvasJS.addColorSet("netWorthColors", this.props.colorScheme);
 
 		return {
@@ -40,8 +41,15 @@ class AccountSummary extends React.Component {
 				type: "pie",
 				indexLabelPlacement: "inside",
 				indexLabel: "${y}",
+				indexLabelFontColor: "#FFF",
+				indexLabelFontSize: 18,
+				indexLabelFontFamily: "Source Sans Pro",
+				indexLabelFontWeight: 600,
 				toolTipContent: null,
-				dataPoints: chartData
+				explodeOnClick: false,
+				dataPoints: chartData,
+				mouseover: (e) => { this.props.onChartClick(e.dataPoint.label); },
+				mouseout: (e) => { this.props.onChartClick(e.dataPoint.label); }
 			}]
 		}
 	}
@@ -54,6 +62,8 @@ class AccountSummary extends React.Component {
 			netWorth += parseFloat(account.value);
 		});
 
+		const breakdownDummyData = { netWorth: netWorth, liabilities: 4150 };
+
 		return (
 			<div className="account-summary-component">
 				<div className="account-summary-inner">
@@ -62,8 +72,13 @@ class AccountSummary extends React.Component {
 					</div>
 
 					<div className="account-summary-net-worth-container">
-						<h2 className="account-summary-net-worth-label">NET WORTH:</h2>
-						<h1 className="account-summary-net-worth">{this.dataParser.parseSingleCurrency(netWorth)}</h1>
+						<div className="net-worth-inner">
+							<h2 className="account-summary-net-worth-label">NET WORTH:</h2>
+							<h1 className="account-summary-net-worth">{this.dataParser.parseSingleCurrency(netWorth)}</h1>
+
+							{/* wait for credit card support to get access to credit card APIs and liability data */}
+							{breakdownDummyData && <AccountBreakdown breakdownData={breakdownDummyData}/>}
+						</div>
 					</div>
 				</div>
 			</div>

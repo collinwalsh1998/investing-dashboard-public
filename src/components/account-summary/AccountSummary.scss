@@ -1,26 +1,36 @@
 .account-summary-component {
+    .account-summary-inner {
+
+    }
     
-}
+    .account-summary-graph-container {
+        overflow: hidden;
+    }
 
-.account-summary-inner {
+    .account-summary-graph-container > div {
+        margin-bottom: -14px;
+    }
+    
+    .account-summary-net-worth-container {
+        position: relative;
+        text-align: center;
+        margin-top: 30px;
+    }
 
-}
-
-.account-summary-graph-container {
-
-}
-
-.account-summary-net-worth-container {
-    margin-top: 30px;
-}
-
-.account-summary-net-worth-label {
-    font-size: 24px;
-    text-align: center;
-}
-
-.account-summary-net-worth {
-    font-size: 44px;
-    text-align: center;
-    margin-top: 4px;
+    .net-worth-inner {
+        display: inline-block;
+        padding-bottom: 24px;
+        cursor: pointer;
+    }
+    
+    .account-summary-net-worth-label {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    .account-summary-net-worth {
+        font-size: 44px;
+        text-align: center;
+        margin-top: 4px;
+    }
 }
