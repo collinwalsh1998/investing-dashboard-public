@@ -62,7 +62,7 @@ class AccountSummary extends React.Component {
 			netWorth += parseFloat(account.value);
 		});
 
-		const breakdownDummyData = { netWorth: netWorth, liabilities: 4150 };
+		const breakdownDummyData = { netWorth: netWorth, liabilities: 1900 };
 
 		return (
 			<div className="account-summary-component">
@@ -74,7 +74,7 @@ class AccountSummary extends React.Component {
 					<div className="account-summary-net-worth-container">
 						<div className="net-worth-inner">
 							<h2 className="account-summary-net-worth-label">NET WORTH:</h2>
-							<h1 className="account-summary-net-worth">{this.dataParser.parseSingleCurrency(netWorth)}</h1>
+							<h1 className="account-summary-net-worth">{this.dataParser.parseSingleCurrency(netWorth - breakdownDummyData.liabilities)}</h1>
 
 							{/* wait for credit card support to get access to credit card APIs and liability data */}
 							{breakdownDummyData && <AccountBreakdown breakdownData={breakdownDummyData}/>}

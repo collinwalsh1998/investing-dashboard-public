@@ -15,6 +15,7 @@
 
     .account-breakdown-inner {
         text-align: left;
+        overflow: auto;
         padding: 16px 20px;
     }
 
@@ -43,28 +44,65 @@
         margin-left: -10px;
     }
 
-    .breakdown-labels {
+    .breakdown-amount {
+        font-size: 20px;
+        line-height: normal;
+        text-align: left;
+        letter-spacing: -0.5px;
+        word-break: normal;
+        margin-top: 2px;
+        padding-left: 6px;
+    }
 
+    .breakdown-amount.right {
+        text-align: right;
+        padding-left: 0;
+        padding-right: 6px;
+    }
+
+    .liabilities-content {
+        
+    }
+
+    .assets-content {
+        
+    }
+
+    .indicator-line {
+        display: block;
+        width: 100%;
+        height: 10px;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        margin: 10px 0;
+    }
+
+    .indicator-line.up {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .indicator-line.down {
+        border-top: 1px solid #ccc;
     }
 
     .breakdown-label {
-        display: inline-block;
-        vertical-align: top;
         font-size: 14px;
         line-height: normal;
+        text-align: left;
+        word-break: normal;
         font-weight: 600;
+        padding-left: 6px;
     }
 
     .breakdown-label.right {
-        display: inline-block;
-        vertical-align: top;
-        float: right;
+        text-align: right;
+        padding-left: 0;
+        padding-right: 6px;
     }
 
     .breakdown-bars {
         position: relative;
         height: 14px;
-        margin-top: 6px;
     }
 
     .breakdown-bar {
@@ -80,29 +118,13 @@
 
     .breakdown-bar.assets {
         background-color: rgba(63, 81, 181, 0.75);
-        z-index: 1;
     }
 
     .breakdown-bar.liabilities {
         background-color: #ccc;
-    }
-
-    .breakdown-amounts {
-        margin-top: 8px;
-    }
-
-    .breakdown-amount {
-        display: inline-block;
-        vertical-align: top;
-        font-size: 24px;
-        line-height: normal;
-        letter-spacing: -0.5px;
-    }
-
-    .breakdown-amount.right {
-        display: inline-block;
-        vertical-align: top;
-        float: right;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        z-index: 1;
     }
 }
 
